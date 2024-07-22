@@ -6,7 +6,7 @@ import {
   FormattedCustomersTable,
 } from "@/app/lib/definitions";
 
-export default async function CustomersTable({
+export default function CustomersTable({
   customers,
 }: {
   customers: FormattedCustomersTable[];
