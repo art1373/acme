@@ -1,7 +1,10 @@
-import { Suspense } from "react";
+import { Metadata } from "next";
 import { fetchFilteredCustomers } from "@/app/lib/data";
 import CustomersTable from "@/app/ui/customers/table";
-import { useSearchParams } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Customers",
+};
 
 export default async function Page({
   searchParams,
