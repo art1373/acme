@@ -17,5 +17,5 @@ export default async function Page({
   const query = searchParams?.query || "";
   const customers = await fetchFilteredCustomers(query);
 
-  return <CustomersTable customers={customers} />;
+  return <CustomersTable customers={customers} showDetailIcon />;
 }

@@ -1,12 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { lusitana } from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import { FormattedCustomersTable } from "@/app/lib/definitions";
+import { PencilIcon } from "@heroicons/react/24/outline";
 
 export default function CustomersTable({
   customers,
+  showDetailIcon,
 }: {
   customers: FormattedCustomersTable[];
+  showDetailIcon?: boolean;
 }) {
   return (
     <div className="w-full">
@@ -107,6 +111,16 @@ export default function CustomersTable({
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
                         {customer.total_paid}
                       </td>
+                      {showDetailIcon && (
+                        <td className="bg-white">
+                          <Link
+                            href={`/dashboard/customers/${customer.id}`}
+                            className=""
+                          >
+                            <PencilIcon className="w-5" />
+                          </Link>
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>
